@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>导航栏</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<style type="text/css">
+			body{margin: 0; padding: 0;}
+			.mymg{
+				margin-top: 5px;
+			}
+		</style>
+		
+		<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		
+	</head>
+	<body>
+		<!--导航栏-->
+		<nav class="navbar navbar-default">
+			
+			<div class="container-fluid">
+				<!--logo区域-->
+				<div class="navbar-header">
+					<a href="#" class="navbar-brand">
+						<img src="img/logo.png" width="100" height="30"/>
+						
+					</a>
+				</div>
+				
+				<!--菜单区域-->
+				<ul class="nav navbar-nav">
+					<li><a href="#">首页</a></li>
+					<li><a href="#">新闻中心</a></li>
+					<li><a href="#">产品中心</a></li>
+					<li><a href="#">联系我们</a></li>
+				</ul>
+				
+			</div>
+			
+		</nav>
+		
+		<!--面包屑导航-->
+			<div class="row">
+				<div class="col-md-3"></div>
+				<div class="col-md-10">
+					<ul class="breadcrumb">
+						<li><a href="#">首页</a></li>
+						<li><a href="#">新闻中心</a></li>
+						<li><a href="#">产品中心</a></li>	
+					</ul>
+				</div>
+			</div>
+			
+			
+		
+		<!--主题部分-->
+		<div class="container">
+			
+			<div class="row">
+				
+				<div class="col-md-12">
+					<div id="myCarousel" class="carousel slide">
+					    <!-- 轮播（Carousel）指标 -->
+					    <ol class="carousel-indicators">
+					        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					        <li data-target="#myCarousel" data-slide-to="1"></li>
+					        <li data-target="#myCarousel" data-slide-to="2"></li>
+					    </ol>   
+					    <!-- 轮播（Carousel）项目 -->
+					    <div class="carousel-inner">
+					        <div class="item active">
+					            <img src="img/banner_1.jpg" alt="First slide">
+					        </div>
+					        <div class="item">
+					            <img src="img/banner_2.jpg" alt="Second slide">
+					        </div>
+					        <div class="item">
+					            <img src="img/banner_3.jpg" alt="Third slide">
+					        </div>
+					    </div>
+					    <!-- 轮播（Carousel）导航 -->
+					    <a class="carousel-control left" href="#myCarousel" 
+					       data-slide="prev"> <span _ngcontent-c3="" aria-hidden="true" class="glyphicon glyphicon-chevron-left"></span></a>
+					    <a class="carousel-control right" href="#myCarousel" 
+					       data-slide="next">
+					    	<span _ngcontent-c3="" aria-hidden="true" class="glyphicon glyphicon-chevron-right"></span>
+					    </a>
+					</div>
+				</div>
+				
+			</div>
+			
+			<div class="row mymg">
+				<div class="col-md-3">
+					<ul class="list-group">
+						<li class="list-group-item"><a href="#" onclick="showDiv()">用户管理</a></li>
+						<li class="list-group-item"><a href="#" onclick="showDiv()">新闻中心</a></li>
+						<li class="list-group-item"><a href="#" onclick="showDiv()">产品中心</a></li>
+					</ul>
+				</div>
+				<div class="col-md-9" id="1" style="display: block;">
+					
+					<table class="table table-striped table-hover table-bordered">
+						<tr class="info">
+							<th>姓名</th>
+							<th>性别</th>
+							<th>电话</th>
+						</tr>
+						<tr>
+							<td>张三</td>
+							<td>女</td>
+							<td>13457943245</td>
+						</tr>
+						<tr>
+							<td>李四</td>
+							<td>男</td>
+							<td>13567426575</td>
+						</tr>
+						<tr>
+							<td>王五</td>
+							<td>男</td>
+							<td>13462425674</td>
+						</tr>
+						<tr>
+							<td>赵六</td>
+							<td>女</td>
+							<td>14567823454</td>
+						</tr>
+					</table>
+					
+				</div>
+				
+				
+				<div class="col-md-9" id="2" style="display: none;">
+					
+					<table class="table table-striped table-hover table-bordered">
+						<tr class="info">
+							<th>日期</th>
+							<th>作者</th>
+							<th>详情</th>
+						</tr>
+						<tr>
+							<td>2020-5-1</td>
+							<td>张三</td>
+							<td>xxx产品销售100万</td>
+						</tr>
+						<tr>
+							<td>2020-5-3</td>
+							<td>李四</td>
+							<td>xxx产品不健康</td>
+						</tr>
+						<tr>
+							<td>2020-5-6</td>
+							<td>王五</td>
+							<td>有机食物xxx</td>
+						</tr>
+						<tr>
+							<td>2020-6-1</td>
+							<td>赵六</td>
+							<td>xxx已下架</td>
+						</tr>
+					</table>
+					
+				<div class="col-md-9" id="3" style="display: none;">
+					
+					<table class="table table-striped table-hover table-bordered">
+						<tr class="info">
+							<th>产品名</th>
+							<th>类型</th>
+							<th>价格</th>
+						</tr>
+						<tr>
+							<td>牛奶</td>
+							<td>饮料</td>
+							<td>14</td>
+						</tr>
+						<tr>
+							<td>方便面</td>
+							<td>垃圾食品</td>
+							<td>24</td>
+						</tr>
+						<tr>
+							<td>西瓜</td>
+							<td>水果</td>
+							<td>134</td>
+						</tr>
+						<tr>
+							<td>洋葱圈</td>
+							<td>膨化食品</td>
+							<td>24</td>
+						</tr>
+					</table>
+					
+				</div>
+				
+				
+				
+				<div style="float: right;">
+					<ul class="pagination">
+						<li>
+							<a href="#" aria-label="Previous">
+								<span aria-hidden="true">&laquo;</span>
+							</a>
+						</li>
+						<li><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li>
+							<a href="#" aria-label="Next">
+								<span aria-hidden="true">&raquo;</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>	
+	</body>
+	<script type="text/javascript">
+		var oid = '1';
+		function change(){
+			id=$(this).parent().parent().Attr('id')
+		}
+		
+		function showDiv() {
+			var div1=document.getElementById("1");
+			var div2=document.getElementById("2");
+			var div3=document.getElementById("3");
+			if (div1.style.display=='block')
+				div1.style.display='none';
+			else div1.style.display='block';
+			if (div2.style.display=='block')
+				div2.style.display='none';
+			else div2.style.display='block';
+			if (div3.style.display=='block')
+				div3.style.display='none';
+			else div3.style.display='block';
+		}
+
+	</script>
+</html>
