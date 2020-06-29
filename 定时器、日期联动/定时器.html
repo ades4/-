@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>定时器</title>
+	</head>
+	<body>
+		<div id="curTime"></div>
+	</body>
+</html>
+
+<script>
+	function getCurDate(){
+		//获取当前的日期时间
+		var d = new Date();
+		//转化为本地的日期时间格式
+		var stime = d.toLocaleString();
+		
+		document.getElementById("curTime").innerHTML=stime;
+		
+		//定时器,每隔1000毫秒=1秒执行一次getCurDate()方法
+		setTimeout("getCurDate()", 1000);
+	}
+	
+	getCurDate();
+	
+</script>

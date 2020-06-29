@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			select{width: 100px;}
+		</style>
+	</head>
+	<body>
+		当前为北京时间：
+		<select id="selYear"></select>年
+		<select id="selMonth" onchange="getMonth()"></select>月
+		<select id="selDay"></select>日	
+		<span class="H"></span>
+	</body>
+</html>
+
+<script>
+	function init(){
+		
+		var d = new Date();
+		
+		//年的下拉框
+		var year = document.getElementById("selYear")
+		//创建一个option对象 <option value="1970">1970</option>
+		for(var i=1970; i<=2020; i++){
+			var op = new Option(i,i);
+			if(i==d.getFullYear()){
+				//当前处于选择状态
+				op.selected=true;
+			}
+			//将option追加到year下拉框中
+			year.appendChild(op);
+		}
+		
+		//创建月
+		var month = document.getElementById("selMonth");
+		for(var i=1; i<=12; i++){
+			var op = new Option(i,i);
+			if(i==(d.getMonth()+1)){
+				op.selected=true;
+			}
+			month.appendChild(op);
+		}
+	
+	}
+	
+	//获取月
+	function getMonth(){
+		var month = document.getElementById("selMonth");
+		var curMonth = month.value;
+		
+		var day = document.getElementById("selDay");
+		var days=[0,31,28,31,30,31,30,31,31,30,31,30,31];
+		
+		//如果年是闰年，那么28会变为29
+		
+		//清空
+		day.innerHTML='';
+		for(var i=1; i<=days[curMonth]; i++){
+			
+			var op = new Option(i,i);
+			day.appendChild(op);
+		}
+	}
+	
+	function IsRun(year) //判断是否闰平年
+    {
+        return (0 == year % 4 && (year % 100 != 0 || year % 400 == 0))
+    }
+
+    function time() {
+        var hou = new Date().getHours()<10?"0"+ new Date().getHours() : new Date().getHours();
+        var min = new Date().getMinutes()<10?"0"+ new Date().getMinutes() : new Date().getMinutes();
+        var sec = new Date().getSeconds()<10?"0"+ new Date().getSeconds() : new Date().getSeconds();
+        document.getElementsByClassName('H')[0].innerHTML = hou + " : " + min + " : " + sec;      
+    }
+    window.setInterval("time()", 1000);
+
+	init();
+	
+</script>
