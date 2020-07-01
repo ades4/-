@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		div{
+			text-align: center;
+			font-size: 40px;
+		}
+	</style>
+	<body>
+		<style>
+			body{
+				background-image: url(img/3.png);
+			}
+		</style>
+		<div id="dvWelcome"></div>
+	</body>
+</html>
+
+<script>
+	var msg = "喜欢你没道理  小柯柯~~";
+	var i=1;
+	function show(){
+		var showMsg = msg.substr(0,i);
+		i++;
+		if(i>msg.length){
+			i=0;
+		}
+		
+		document.getElementById("dvWelcome").innerHTML = showMsg;
+		setTimeout("show()",400);
+	}
+	
+	show();
+	
+</script>
